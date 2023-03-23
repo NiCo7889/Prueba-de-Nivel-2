@@ -31,7 +31,34 @@ class Punto:
         else:
             return print("El punto ({},{}) es el origen.")
         
-    def vector(self):
+    def vector(self, punto):
+        self.punto = punto
+        return print("El resultado entre estos dos puntos es: {}".format(self - punto))
 
 
-    def distancia(self, )
+    def distancia(self, punto):
+        distancia = math.sqrt((punto.x - self.x)^2 + (punto.y - self.y)^2)
+        return print("La distancia entre los puntos {} y {} es: {}".format(self, punto, distancia))
+
+
+"""
+Crea una clase llamada Rectangulo con dos puntos (inicial y final) que formarán la diagonal del rectángulo.
+• Añade un método constructor para crear ambos puntos fácilmente, si no se envían se crearán dos puntos en el origen por defecto.
+• Añade al rectángulo un método llamado base que muestre la base.
+• Añade al rectángulo un método llamado altura que muestre la altura.
+• Añade al rectángulo un método llamado area que muestre el area.
+"""
+
+
+class rectangulo:
+    def __init__(self, inicial, final):
+        self.inicial = inicial
+        self.final = final
+
+    def base(self):
+
+    def altura(self):
+
+    def area(self):
+
+    
