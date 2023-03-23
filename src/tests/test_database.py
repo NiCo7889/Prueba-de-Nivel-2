@@ -13,8 +13,14 @@ class TestDatabase(unittest.TestCase):
     def test_distancia(self):
         self.assertEqual(db.distancia(), )
 
-    def test_
+    def test_base(self):
+        self.assertEqual(db.base(), )
+    
+    def test_altura(self):
+        self.assertEqual(db.altura(), )
 
+    def test_area(self):
+        self.assertEqual(db.area(), )
 
 if __name__ == '__main__':
     unittest.main()
