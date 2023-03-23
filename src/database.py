@@ -47,20 +47,30 @@ Crea una clase llamada Rectangulo con dos puntos (inicial y final) que formarán
 • Añade al rectángulo un método llamado base que muestre la base.
 • Añade al rectángulo un método llamado altura que muestre la altura.
 • Añade al rectángulo un método llamado area que muestre el area.
+Sugerencia
+Puedes identificar fácilmente estos valores si intentas dibujar el cuadrado a partir de su diagonal. Si andas perdido, prueba de dibujarlo en un papel, ¡seguro
+que lo verás mucho más claro! Además recuerda que puedes utilizar la función abs() para saber el valor absolute de un número.
 """
 
 
-# class rectangulo:
-#     def __init__(self, inicial, final):
-#         self.inicial = inicial
-#         self.final = final
+class rectangulo:
+    def __init__(self, inicial = Punto(), final = Punto()):
+        self.inicial = inicial
+        self.final = final
 
-#     def base(self):
+    def base(self):
+        self.base = abs(self.final.x - self.inicial.x)
+        return print("Base del rectángulo {}".format(self.base))
 
-#     def altura(self):
-
-#     def area(self):
-
+    def altura(self):
+        self.altura = abs(self.final.y - self.final.y)
+        return print("Altura del rectángulo {}".format(self.altura))
+    
+    def area(self):
+        self.base = abs(self.final.x - self.inicial.x)
+        self.altura = abs(self.final.y - self.final.y)
+        self.area = self.base * self.altura
+        return print("El área del rectángulo son {} u^2.".format(self.area))
     
 """
 • Crea los puntos A(2, 3), B(5,5), C(-3, -1) y D(0,0) e imprimelos por pantalla.
@@ -81,16 +91,22 @@ punto3 = Punto(-3, -1)
 origen = Punto(0, 0)
 
 print("Consulta a que cuadrante pertenecen el punto A, C y D.\n")
-print(punto1.cuadrante())
-print(punto3.cuadrante())
-print(origen.cuadrante())
+punto1.cuadrante()
+punto3.cuadrante()
+origen.cuadrante()
 
 print("Consulta la distancia entre los puntos 'A y B' y 'B y A'.\n")
-print(punto1.vector(punto2))
-print(punto2.vector(punto1))
+punto1.vector(punto2)
+punto2.vector(punto1)
 
 print("Determina cual de los 3 puntos A, B o C, se encuentra más lejos del origen, punto (0,0).\n")
-
+punto1.distancia(origen)
+punto2.distancia(origen)
+punto3.distancia(origen)
 print("Crea un rectángulo utilizando los puntos A y B.\n")
+Rectangulo = rectangulo(punto1, punto2)
 
 print("Consulta la base, altura y área del rectángulo.\n")
+Rectangulo.base()
+Rectangulo.altura()
+Rectangulo.area()
